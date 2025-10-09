@@ -41,8 +41,13 @@ int main()
 // int pmt[100005];
 // void solve1(string s){    
 //     int m=s.length();
-//     for(int i=1;i<m;i++){//最后一位字符编号是i的字符串，长度为i+1
-//         for(int len=i;len>=1;len--){
+//     for(int i=1;i<m;i++){
+//      //最后一位字符编号是i的字符串，长度为i+1
+//      //i是位置，从*第2个字符*到*第m-1个字符*(即最后一个字符)
+//      //i从第二个字符开始是因为第一个字符的最长公共前后缀一定为0(字符串的最长真公共前后缀不能算*自己本身*和*自己本身*)
+//         for(int len=i;len>=1;len--){ abcabc // aaa->aa,aa
+//          //第i位向前找，找从第0位开始最长的和后面第i-len+1位开始，最长的相等的字符串的长度
+//          //len不行，就找长为len-1的串（短一个的串）
 //             bool match=1;
 //             for(int j=0;j<len;j++){
 //                 if(s[j]!=s[i-len+1+j]){
