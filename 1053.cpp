@@ -18,7 +18,7 @@ void solve(int x, int arr[]){
         else if(sum>x)--r;
         else if(sum<x)++l;
     }
-end:
+//end:
     if(found)cout<<best_a<<' '<<best_b<<'\n';
     else cout<<0<<'\n';
 }
