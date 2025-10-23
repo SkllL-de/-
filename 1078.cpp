@@ -14,10 +14,13 @@ int main()
     for(int i=1;i<=n;i++){
         cin>>st[i][0];
     }
-    for(int i=2;i<=100005;i++){
+    /*for(int i=2;i<=100005;i++){
         if((i&(i-1))==0)log_2[i]=log_2[i/2]+1;
         else log_2[i]=log_2[i-1];
-    }
+    }*/
+   for(int i=2;i<=100005;i++){
+    log_2[i]=log_2[i>>1]+1;
+   }
     for(int k=1;k<=20;k++){
         for(int i=1;i+(1<<k)-1<=n;i++){
             st[i][k]=max(st[i][k-1],st[i+(1<<(k-1))][(k-1)]);
